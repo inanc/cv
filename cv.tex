@@ -10,42 +10,60 @@
 \usepackage{mathpazo}
 % modern themes
 \moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{blue}                 
+\moderncvicons{awesome}
+% color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
 \usepackage[utf8]{inputenc}    
 \usepackage[absolute,overlay]{textpos}
 % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
 % adjust the page margins
-\usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+\usepackage[scale=0.80, top=2.5cm, bottom=1cm]{geometry}
+% \usepackage[scale=0.80]{geometry}
+\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitle}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 \usepackage{import}
 
 % personal data
 \name{İnanç}{Çakıl}
-
+%\name{Inanc}{Cakil}
+%\makeatletter % <=======================================================
+%\newcommand*{\extrainfoo}[1]{\def\@extrainfoo{#1}}
+%\patchcmd{\makehead}
+% {\ifthenelse{\isundefined{\@extrainfo}}{}{\addtomakeheaddetails{\@extrainfo}}}
+% {\ifthenelse{\isundefined{\@extrainfo}}{}{\addtomakeheaddetails{\@extrainfo}}
+%  \ifthenelse{\isundefined{\@extrainfoo}}{}{\addtomakeheaddetails{\@extrainfoo}}}
+% {}
+% {}
+%\makeatother % <========================================================
 %\address{Ankara,Turkey }% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
                   % optional, remove / comment the line if not wanted
 %\phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
 %\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
 \email{inanc.cakil@gmail.com}                               % optional, remove / comment the line if not wanted
-\homepage{inanc.github.io}      
-
-\extrainfo{\homepagesymbol\ github.com/inanc}     
-
+\homepage{inanc.github.io}  
+%\newcommand*{\xingsocialsymbol}{\faXing~}
+%\social[xing][xing.com/JohnDoe]{JohnDoe}
+%\extrainfo{Age (Date of birth)}
+%\extrainfoo{Single} % <================================================= 
+%\extrainfo{\href{www.google.com}{\textit{link}}\makeheaddetailssymbol \href{https://github.com/johndoe}{\faGithub~johndoe}\makeheaddetailssymbol additional information3}
+\social[github][github.com/inanc]{github.com/inanc}    
 \phone[mobile]{+905069300989} 
-
+%%\social[linkedin]{john.doe}
+%\social[twitter]{jdoe}
 % optional, remove / comment the line if not wanted
 \photo[64pt][0.1pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+
 %\makeatletter
 %\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 %\makeatother
@@ -72,8 +90,7 @@
 
 
 
-\small{I'm a motivated software engineer who loves learning new things and not afraid to go out of the comfort zone. I'm eager to take responsibility and work in challenging and interesting projects.
-I'm looking to collaborate with a team of innovative professionals who are dedicated to their craft.}
+\small{I’m an ambitious software engineer who loves learning new things and is not afraid to go out of my comfort zone. I’m eager to take responsibility and to work on challenging projects. I’m looking to collaborate with a team of innovative professionals dedicated to their craft.}
 
 \section{Work Experience}
 
@@ -81,30 +98,41 @@ I'm looking to collaborate with a team of innovative professionals who are dedic
 
 \begin{itemize}
 
-\item{\cventry{Nov 2019 -- Present}{Software Engineer}{Logo Yazilim}{Ankara,Turkey}{}{\vspace{3pt}Logo Yazilim is Turkey’s largest public software company that provides business application development, integration, and HR solutions.\newline
-Participating in the development of Logo J-Platform which is an enterprise resource planning software for large businesses.\newline
-Agile development methodology is used for the development of the project. Java programming language is used for server-side programming, the presentation layer is developed using Vaadin.\newline
-Technologies: Java, Spring, Vaadin, Jenkins, Ant, Ivy, Git, Mssql}}
+\item{\cventry{Nov 2019 -- Present}{Software Engineer}{LOGO Business Solutions}{Ankara,Turkey}{}{\vspace{3pt}LOGO Business Solutions is Turkey’s largest public software company that provides business application development, integration, and HR solutions.\newline
+I participated in the development of Logo J-Platform, an enterprise resource planning software for large businesses.\newline
+• Migration of windows-based ERP application to a cloud-based web application.\newline
+• Developed web components and web infrastructure.\newline
+• Solved architecture and infrastructure bugs.\newline
+• Improved the grid components speed by 20\% by refactoring the components style system. \newline
+• Developed unit tests.\newline
+In Addition, I participated in the rewriting of the legacy Resource Editor project, according to best practices in Java. \newline
+• Developed components and infrastructure. \newline
+• Integration with Azure translation service to decrease 60\% of translators workload.\newline
+Technologies: Java, Spring Boot, Vaadin, Hibernate, JUnit, Maven, Ivy, CSS, Git, MSSQL}}
 
 
 \vspace{6pt}
 
-\item{\cventry{Jun 2019 -- Sep 2019}{Software Engineer}{Med.tn}{Tunis,Tunisia}{}{\vspace{3pt}Med.tn is the most expansive medical platform bridging the gap in access to health services across Tunisia and 7 other countries.\newline
-Working with the enterprise, I developed a user interface module to be used virtually by patients to consult doctors. It was a collaborative effort with doctors and patients to create an interactive form that allows patients to choose their symptoms, making diagnosis much simpler for medical experts/doctors.\newline
-Additionally, I was involved in developing a telemedicine system that specialized in burn injury treatment and included a virtual meeting component. It provides a visual of a burnt patient including the parts and percentage of burn of the human body for easy reporting and diagnosis.\newline
-Technologies: Java, Spring, Javascript, Jquery, Php, Codeigniter, CSS, Mysql}}
+\item{\cventry{Jun 2019 -- Sep 2019}{Software Engineer}{Med.tn}{Tunis,Tunisia}{}{\vspace{3pt}Med.tn is the most expansive medical platform, bridging the gap in access to health services across Tunisia and seven other countries.
+\newline
+Working with the enterprise, I developed a user interface module to be used virtually by patients to consult doctors. It was a collaborative effort with doctors and patients to create an interactive form that allows patients to choose their symptoms, making diagnosis easier for medical experts/doctors.  \newline
+Additionally, I helped develop a telemedicine system specialising in burn injury treatment and included a virtual meeting component. The service provided visual information of a burnt patient. Included in these visuals, information as to what parts and percentage of burn of the human body for easy reporting and diagnosis.
+\newline
+Technologies: Java, Spring, Javascript, Jquery, Php, CSS, MySQL}}
 
 
 \vspace{6pt}
-\item{\cventry{Sep 2018 -- May 2019}{Software Engineer}{Uet System}{Ankara,Turkey}{}{\vspace{3pt}Worked on top-down architecture and backend development for several projects.\newline
-Participating in the development of inventory management software for Turkseker which is the biggest sugar company in Turkey.\newline
-Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, Mysql}}
+\item{\cventry{Sep 2018 -- May 2019}{Software Engineer}{Uet System}{Ankara,Turkey}{}{\vspace{3pt}Worked on top-down architecture and backend development for several projects.
+\newline
+Participated in the development of inventory management software for Turkseker, the biggest sugar company in Turkey. 
+\newline
+Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, MySQL}}
 
 \end{itemize}
 
 \section{Education}
 
-\vspace{5pt}
+\vspace{6pt}
 
 \begin{itemize}
 
@@ -120,7 +148,9 @@ Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, Mysql}}
 
 \begin{itemize}
 
-\item \textbf{Languages \& Technologies:} Java, Spring, Vaadin, JavaScript, Jquery, CSS, SQL, MySQL, Linux, Docker, Git, Ivy, Maven, JUnit, Mockito
+\item \textbf{Languages \& Technologies:} Java, Spring, Vaadin, Hibernate, JavaScript, CSS, SQL, MSSQL, Maven, Ivy, JUnit, Mockito, Git, Docker
+\end{itemize}
+
 
 % \vspace{6pt}
 % % \item \textbf{Assembly Languages:} Linux, Micro Controller 8051, Micro Processor 8085
@@ -133,7 +163,6 @@ Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, Mysql}}
 
 % % % % \item \textbf{Technology Hands On:} Amazon Web Services, Internet of Things(IOT), Docker, Google Cloud Services
 
-\end{itemize}
 
 
 % \section{Certifications}
@@ -148,9 +177,9 @@ Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, Mysql}}
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+%\nocite{*}
+%%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
 % Publications from a BibTeX file using the multibib package
 %\section{Publications}
@@ -163,7 +192,7 @@ Technologies: Java, Spring, Swing, Javascript, Jquery, Php, CSS, Mysql}}
 
 %-----       letter       ---------------------------------------------------------
 
+
+
 \end{document}
-
-
 %% end of file `template.tex'.
